@@ -184,7 +184,7 @@ function isItAnApple( fruitArray ) {
       booleanArray[i] = false;
     }
   }
-  
+
   return booleanArray;
 }
 
@@ -243,7 +243,10 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  
+  //IT IS AN ARRAY OF OBJECTS - YOU NEED TO ACCESS THE CORRECT OBJECT FIRST
+  let carIndex = inventory[index];
+  return `This is a ${carIndex.car_make} ${carIndex.car_model}`;
 }
 
 /**
