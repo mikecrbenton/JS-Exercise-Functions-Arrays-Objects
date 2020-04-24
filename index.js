@@ -147,8 +147,14 @@ function getName( myObj ) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex( myArray ) {
+  
+  for(let i=0 ; i < myArray.length ; i++){
+
+    if(myArray[i] === "apple"){
+      return i;
+    }
+  }
 }
 
 /**
@@ -166,8 +172,20 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple( fruitArray ) {
+  
+  let booleanArray = [];
+
+  for(let i=0 ; i < fruitArray.length ; i++){
+
+    if( fruitArray[i] === "apple"){
+      booleanArray[i] = true
+    }else{
+      booleanArray[i] = false;
+    }
+  }
+  
+  return booleanArray;
 }
 
 
