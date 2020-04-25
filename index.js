@@ -356,16 +356,13 @@ function getOlderCars( inventory, year ) {
   let oldCarArray = [];
   let index = 0;
 
-  console.log("The year is" + year);
   for( let i=0 ; i < inventory.length ; i++ ){
     
     if( inventory[i].car_year <= year ){
      
-      console.log( inventory[i].car_year )
       oldCarArray[index++] = inventory[i];
     }
   }
-  console.log(oldCarArray);
   return oldCarArray;
 }
 
@@ -384,8 +381,20 @@ function getOlderCars( inventory, year ) {
 */
 //================================================================================
 
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars( inventory ) {
+  
+    let germanCarArray = [];
+    let index = 0;
+  
+    for( let i=0 ; i < inventory.length ; i++ ){
+      
+      if( inventory[i].car_make === 'Audi' || inventory[i].car_make === 'Mercedes-Benz' || 
+      inventory[i].car_make === 'Volkswagen' || inventory[i].car_make === 'BMW' ){
+       
+        germanCarArray[index++] = inventory[i];
+      }
+    }
+    return germanCarArray;
 }
 
 /**
@@ -403,8 +412,15 @@ function getGermanCars(/* code here */) {
 */
 //================================================================================
 
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker( number ) {
+  
+  return {
+    odometer: number,
+    drive: function( distance ) {
+      this.odometer += distance;
+      return this.odometer;
+    }
+  }
 }
 
 /// ////// END OF CHALLENGE /////////
